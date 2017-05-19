@@ -1,3 +1,4 @@
+// serialized function clone count: 1
 var f = function(x) {
   var i = x > 5 ? 0 : 1;
   return function() {

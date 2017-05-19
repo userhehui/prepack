@@ -1,3 +1,4 @@
+// serialized function clone count: 0
 var f = function() {
   var i = 0;
   return function() {

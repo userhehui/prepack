@@ -1334,6 +1334,7 @@ export class Serializer {
           }
           instanceBatches = newInstanceBatches;
         }
+        this.statistics.functionClones += instanceBatches.length - 1;
 
         for (instances of instanceBatches) {
           let capturedScopeDecl = allocateModifiedBindingVariables.call(this, instances[0], names, true);
@@ -1832,6 +1833,6 @@ export class Serializer {
     let serialized = this.serialize(filename, code, sourceMaps);
     invariant(!this.logger.hasErrors());
     if (this.options.logStatistics) this.statistics.log();
+    serialized.generated.statistics = this.statistics;
     return serialized.generated;
-  }
-}
+  } }
